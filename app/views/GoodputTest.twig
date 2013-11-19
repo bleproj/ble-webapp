@@ -1,0 +1,198 @@
+{% include 'parts/header.twig' %}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <!--Sidebar content-->
+
+            {% if(compareto) %}
+                <h2>Comparing 2 tests</h2>
+                <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                {{ test.name }} <span class="pull-right">Test 1</span>
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="accordion-body in collapse" style="height: auto;">
+                            <div class="accordion-inner">
+                                <p><strong>Test type:</strong> {{ test.type }} <br>
+                                    <strong>Data amount: </strong> {{ test.testData().data|replace({'testdata' : ''})}}<br>
+                                    <strong>Host: </strong> {{ test.testData().host }}<br>
+                                    <strong>Protocol: </strong> {{ test.testData().protocol }}<br>
+                                </p>
+                                <a class="delete" href="/tests/{{ test2.id }}">Remove from comparison</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                {{ test2.name }} <span class="pull-right second-test">Test 2</span>
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
+                            <div class="accordion-inner">
+                                <p><strong>Test type:</strong> {{ test2.type }} <br>
+                                    <strong>Data amount: </strong> {{ test.testData().data|replace({'testdata' : ''})}}<br>
+                                    <strong>Host: </strong> {{ test2.testData().host }}<br>
+                                    <strong>Protocol: </strong> {{ test.testData().protocol }}<br>
+                                </p>
+                                <a class="delete" href="/tests/{{ test.id }}">Remove from comparison</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="compare-list"><h3>Change comparison</h3>
+                    <ul class="nav nav-tabs nav-stacked">
+                        <li><a href="/tests/40">hip_test <span class="pull-right">2 weeks ago</span></a></li>
+                        <li><a href="/tests/39">hip_demo_test <span class="pull-right">2 weeks ago</span></a></li>
+                        <li><a href="/tests/38">RTT Test One <span class="pull-right">3 weeks ago</span></a></li>
+                        <li><a href="/tests/27">500_hip_test <span class="pull-right">3 weeks ago</span></a></li>
+                        <li><a href="/tests/26">500_reg <span class="pull-right">3 weeks ago</span></a></li>
+                    </ul>
+                </div>
+                <a class="btn compare-btn" href="#">Change comparison</a>
+            {% else %}
+                <h2>{{ test.name }}</h2>
+                <p><strong>Test type:</strong> {{ test.type }} <br>
+                    <strong>Data amount: </strong> {{ test.testData().data|replace({'testdata' : ''})}}<br>
+                    <strong>Host: </strong> {{ test.testData().host }}<br>
+                    <strong>Protocol: </strong> {{ test.testData().protocol }}<br>
+                </p>
+                <hr>
+
+                <div class="compare-list"><h3>Compare this test to</h3>
+                    <ul class="nav nav-tabs nav-stacked">
+                        {% for comparator in validcomparisons %}
+                            <li><a href="/tests/{{ test.id }}/?compareTo={{ comparator.id }}">{{ comparator.name }} <span
+                                    class="pull-right">{{ comparator.getTimeSince() }}</span></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <a class="btn compare-btn" href="#">Compare to another test</a>
+            {% endif %}
+
+        </div>
+        <div class="span9">
+            <!--Body content-->
+            <div class="row-fluid graphswitch-wrap">
+                <ul class="pull-right graphswitch nav nav-pills">
+                    <li>Graph view:</li>
+                    <li><a href="#filedownloadgraph" class="first-tab" data-toggle="tab">Data transferred</a></li>
+                    <li class="active"><a href="#goodputgraph" data-toggle="tab">Goodput</a></li>
+                </ul>
+            </div>
+            <div class="tab-content loading">
+                <div class="tab-pane" id="goodputgraph"></div>
+                <div class="tab-pane" id="filedownloadgraph"></div>
+            </div>
+            {% if not(compareto) %}
+                <h2>Events</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>eventID</th>
+                        <th>eventType</th>
+                        <th>Timestamp</th>
+                        <th>Data transferred</th>
+                        <th>Goodput</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for event in events %}
+                        <tr>
+                            <td>{{ event.id }}</td>
+                            <td>{{ event.type }}</td>
+                            <td>{{ event.timestamp }}</td>
+                            <td>{{ event.eventdata().dataTransfered }}</td>
+                            <td>{{ event.eventdata().goodput }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+               <div class="hide"><h2>Comparison details</h2>
+                               <table class="table table-bordered">
+                                   <thead>
+                                   <tr>
+                                       <th></th>
+                                       <th>Test 1: {{ test.name }}</th>
+                                       <th>Test 2: {{ test2.name }}</th>
+                                   </tr>
+                                   </thead>
+                                   <tbody>
+                                   <tr>
+                                       <td>Average goodput</td>
+                                       <td>{{ totaldata1 }}</td>
+                                       <td>{{ totaldata2 }}</td>
+                                   </tr>
+                                   </tbody>
+                               </table></div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+        $(".graphswitch .first-tab").click();
+
+        $('.graphswitch a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+            drawGraphs();
+        })
+    });
+
+    // File download graph
+    var jsonData1 = $.ajax({
+        url:"/tests/{{ test.id }}/data/{{ compareto }}",
+        dataType:"json",
+        async:false
+    }).responseText;
+
+    var data1 = new google.visualization.DataTable(jsonData1);
+
+    // Goodput graph
+    var jsonData2 = $.ajax({
+        url:"/tests/{{ test.id }}/goodput/{{ compareto }}",
+        dataType:"json",
+        async:false
+    }).responseText;
+
+    var data2 = new google.visualization.DataTable(jsonData2);
+
+    $('.tab-content').removeClass('loading');
+
+    function drawGraphs() {
+
+        // File download graph
+        chart1 = new google.visualization.AreaChart(document.getElementById('filedownloadgraph'));
+        chart1.draw(data1, {
+            title:null,
+            isStacked:false,
+            legend:false,
+            width:'100%',
+            chartArea:{'bottom': '20', 'top':'8', 'left':'55', 'width':'100%', 'height':'80%'},
+            height:550,
+            vAxis:{title:"Data transferred (MB)"},
+            hAxis:{title:"Time (s)"}
+        });
+
+        // Goodput graph
+        chart2 = new google.visualization.LineChart(document.getElementById('goodputgraph'));
+        chart2.draw(data2, {
+            title:null,
+            isStacked:false,
+            legend:false,
+            width:'100%',
+            height:550,
+            chartArea:{'top':'8', 'left':'60', 'width':'100%', 'height':'80%'},
+            vAxis:{title:"Goodput (KB/s)"},
+            hAxis:{title:"Time (s)"}
+        });
+    }
+
+    google.setOnLoadCallback(drawGraphs);
+</script>
+{% include 'parts/footer.twig' %}

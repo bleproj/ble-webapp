@@ -1,0 +1,31 @@
+{% include 'parts/html-header.twig' %}
+<div class="container">
+
+    <form class="form-signin" action="" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input name="username" type="text" class="form-control" placeholder="Email address" required autofocus>
+        <input name="password" type="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div>
+<script type="text/javascript">
+
+    $(function(){
+        $('#username').focus();
+        $('body').addClass('login');
+    });
+
+   /* $('#login-form').submit(function(e){
+        e.preventDefault();
+        $('#login-form').submit();
+
+        e.preventDefault();
+        $.post("/login", $("login-form").serialize(), function(data){
+            console.log(data);
+        });
+        return false;
+    });*/
+
+</script>
+{% include 'parts/footer.twig' %}

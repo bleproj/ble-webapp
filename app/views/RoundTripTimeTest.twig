@@ -1,0 +1,94 @@
+{% include 'parts/header.twig' %}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <!--Sidebar content-->
+            <div class="sidebar"><h2>{{ test.name }}</h2>
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td><strong>Test type</strong></td>
+                        <td>{{ test.type }}</td>
+                    </tr>
+                    {% if test.description %}
+                        <tr>
+                            <td><strong>Description</strong></td>
+                            <td>{{ test.description }}</td>
+                        </tr>
+                    {% endif %}
+                    <tr>
+                        <td><strong>Client</strong></td>
+                        <td>{{ test.client.name }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Host</strong></td>
+                        <td>{{ test.testData().host }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pings</strong></td>
+                        <td>{{ test.testData().pingcount }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Average</strong></td>
+                        <td>{{ averagepingtime }} ms</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="span9">
+            <!--Body content-->
+            <div id="visualization"></div>
+            <h2>Events</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>eventID</th>
+                    <th>eventType</th>
+                    <th>timeStamp</th>
+                    <th>ms</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for event in events %}
+                    <tr>
+                        <td>{{ event.id }}</td>
+                        <td>{{ event.type }}</td>
+                        <td>{{ event.timestamp }}</td>
+                        <td>{{ event.eventdata().ms }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+       var data = google.visualization.arrayToDataTable([
+            ['Ping Count', 'Ms'],
+            {% for i in range(1, events|length)%}
+            [{{ i }}, {{ events[i-1].eventdata().ms }}],
+            {% endfor %}
+        ]);
+
+        // Create and draw the visualization.
+        var ac = new google.visualization.AreaChart(document.getElementById('visualization'));
+        ac.draw(data, {
+            title:null,
+            isStacked:false,
+            width:'100%',
+            height:550,
+            chartArea:{'width':'85%', 'height':'80%'},
+            vAxis:{title:"Milliseconds"},
+            hAxis:{title:"Ping number"},
+            animation:{
+                duration:1000,
+                easing:'out'
+            }
+        });
+    }
+    google.setOnLoadCallback(drawVisualization);
+</script>
+{% include 'parts/footer.twig' %}

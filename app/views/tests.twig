@@ -1,0 +1,59 @@
+{% include 'parts/header.twig' %}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <!--Sidebar content-->
+            <h4>Filter tests by type</h4>
+            <ul class="nav nav-tabs nav-stacked">
+                <li{% if typeFilter|length == 0 %} class="active" {% endif %}><a href="/tests/">All tests</a></li>
+                {% for type in testtypes %}
+                    <li{% if type.name == typeFilter %} class="active" {% endif %}><a href="?type={{ type.name }}">{{ type.name|replace({'Test' : ''}) }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span9">
+            <!--Body content-->
+            <h1>{{ typeFilter|replace({'Test' : ''})}} Tests{% if typeFilter|length != 0 %}<a class="btn pull-right" href="#testTypeModal" data-toggle="modal">About this test type</a>{% endif %}</h1>
+            <div class="row-fluid">
+                <ul class="thumbnails tests">
+                    {% for test in tests %}
+                        <li class="span4">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3><a href="/tests/{{ test.id }}">{{ test.name }}</a></h3>
+                                    <p>{% if typeFilter|length == 0 %}<strong>Test type: </strong> {{ test.type }}<br>{% endif %}
+                                        <strong>Client: </strong>{{ test.client.name }}<br>
+                                        Uploaded {{ test.getTimeSince() }}
+                                    </p>
+
+                                    <p><a href="/tests/{{ test.id }}" class="btn btn-primary btn-small" data-loading-text="Loading...">View test</a> <a class="delete" href="/tests/{{ test.id }}/?delete=1">Delete test</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div id="testTypeModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h3 id="myModalLabel">{{ testtype.name }}</h3>
+        </div>
+        <div class="modal-body">
+            <p>{{ testtype.description }}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+</div>
+<script>
+    var pusher = new Pusher('YOUR-API-KEY');
+    var channel = pusher.subscribe('tests');
+    channel.bind('new-test', function (data) {
+        window.location.reload();
+    });
+</script>
+{% include 'parts/footer.twig' %}
