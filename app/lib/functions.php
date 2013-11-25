@@ -139,23 +139,6 @@ function isValidTestType($testTypeName)
     }
 }
 
-function isValidEventType($eventTypeName)
-{
-    $testTypes = EventType::find('all');
-    $availableTestTypes = [];
-
-    foreach ($testTypes as $type) {
-        $availableTestTypes[] = $type->name;
-    }
-
-    // === is used because array_search returns the index where the $type is found, which can be zero.
-    if (array_search($eventTypeName, $availableTestTypes) === false) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
 function isValidLoginCredentials($username, $password)
 {
     $password = md5($password);
@@ -175,4 +158,22 @@ function str_lreplace($search, $replace, $subject)
     }
 
     return $subject;
+}
+
+function generate_access_token(){
+    if (function_exists('com_create_guid')){
+        return com_create_guid();
+    }else{
+        mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
+        $charid = strtoupper(md5(uniqid(rand(), true)));
+        $hyphen = chr(45);// "-"
+        $uuid = chr(123)// "{"
+            .substr($charid, 0, 8).$hyphen
+            .substr($charid, 8, 4).$hyphen
+            .substr($charid,12, 4).$hyphen
+            .substr($charid,16, 4).$hyphen
+            .substr($charid,20,12)
+            .chr(125);// "}"
+        return $uuid;
+    }
 }
