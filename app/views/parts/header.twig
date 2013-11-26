@@ -1,6 +1,6 @@
 {% include 'parts/html-header.twig' %}
 
-<div class="navbar navbar-default navbar-static-top" role="navigation">
+<div class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,9 +12,11 @@
             <a class="navbar-brand" href="#">BLE Project</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
+            <ul class="nav navbar-nav main-menu">
+                <li class="home"><a href="/">Home</a></li>
+                <li class="courses"><a href="/courses">Courses</a></li>
+                <li class="log"><a href="/log">Log</a></li>
+                <!--<li class="about"><a href="/about">About</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

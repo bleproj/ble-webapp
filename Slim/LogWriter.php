@@ -70,6 +70,7 @@ class LogWriter
      */
     public function write($message, $level = null)
     {
+        $message = date('j M H:i:s > ') . $message;
         return fwrite($this->resource, (string) $message . PHP_EOL);
     }
 }

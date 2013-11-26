@@ -4,6 +4,11 @@ body.login {
     background-color: #eee;
 }
 
+body.log {
+    position: relative;
+    background: #000;
+}
+
 .form-signin {
     max-width: 330px;
     padding: 15px;
@@ -38,3 +43,48 @@ body.login {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.log-content {
+    background-color: #293236;
+    position: absolute;
+    top: 51px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #3a464c;
+    border-bottom: 1px solid #3a464c;
+    box-sizing: border-box;
+    padding: 20px;
+
+    font-size: 13px;
+    font-family: 'Inconsolata', sans-serif;
+    color: #a4a9a4;
+    overflow-y: scroll;
+}
+
+.log-content-shadow {
+    content:'';
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(41, 50, 54, 1) 0%, rgba(41, 50, 54, 0) 100%);
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
+    }
+
+.log-content .line {
+    display: block;
+}
+
+
+.line.separator { padding: 6px 0;}
+.line.separator:last-child { display: none; }
+
+.log-content .timestamp {
+    color: #749ebf;
+}
+
+.log-content .http-method { color: #ffd42a;}
+.log-content .error { color: #ff311f;}
+.log-content .caret-symbol { color: #a4d57f;}
+.log-content .url-path { color: #fff;}

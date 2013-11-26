@@ -1,9 +1,12 @@
 <?php
 
+$logWriter = new \Slim\LogWriter(fopen('/var/www/bleserver/app/log/log.txt', 'a'));
+
 //Setup the app
 $appOptions = array('mode' => 'development',
     'view' => new \Slim\Views\Twig(),
-    'templates.path' => '/var/www/bleserver/app/views'
+    'templates.path' => '/var/www/bleserver/app/views',
+    'log.writer' => $logWriter
     );
 $app = new \Slim\Slim($appOptions);
 $app->setname('BLE');
@@ -19,39 +22,37 @@ $app->configureMode('production', function () use ($app) {
 $app->configureMode('development', function () use ($app) {
     $app->config(array(
         'log.enable' => true,
-        'debug' => true,
-        \Slim\Log::DEBUG,
+        'debug' => false
     ));
 });
 
 //Setup Pusher instance
-$app->pusher = new Pusher('YOUR-API-KEY', 'YOUR-API-SECRET', 'YOUR-APP-ID');
+$app->pusher = new Pusher('c1f79d5768d5b59431e5', 'bd8a585c5196e503f634', '60313');
 
-//Setup the logger
+//Setup logging
 $app->log = $app->getLog();
-$app->log->debug('App starting');
+$app->log->setLevel(\Slim\Log::DEBUG);
 
-$app->log = $app->getLog();
+//$log->setEnabled(true);
+
+$app->hook('slim.before', function () use ($app) {
+
+    // Only enable logging for API requests
+    $path = substr($app->request()->getPathInfo(),1);
+    $dirArr = explode('/',$path);
+    $rootDir = $dirArr[0];
+
+    if($rootDir != 'api'){
+      $app->log->setEnabled(false);
+    }
+    $app->log->info('App started:');
+});
 
 $app->hook('slim.before.dispatch', function () use ($app) {
+    $app->log->info($app->request->getMethod() . ' request to ' . $app->request()->getPathInfo() . ' ');
+});
 
-    $path = explode("/", $app->request()->getPathInfo());
-
-    if($path[1] != 'login' and $path[1] != 'uploadtest'){
-        if (!$app->getCookie('username')) {
-            $app->redirect('/login');
-        } else {
-            if($path[1] != 'uploadtest'){
-                $app->view()->setData('username', $app->getCookie('username'));
-            }
-        }
-    }
-
-    if (!$path[1]) {
-        $path[1] = 'home';
-    }
-
-    if (count($path) >= 1) {
-        $app->view()->setData('section', $path[1]);
-    }
+$app->hook('slim.after', function () use ($app) {
+    $app->log->info("App finished\n");
+    $app->pusher->trigger('utils', 'log-updated', '');
 });

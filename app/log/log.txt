@@ -1,0 +1,104 @@
+27 Nov 00:13:55 > App started:
+27 Nov 00:13:55 > POST request to /api/authenticate 
+27 Nov 00:13:55 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:13:55 > Authenticate: Client credentials are valid
+27 Nov 00:13:55 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:13:55 > App finished
+
+27 Nov 00:13:56 > App started:
+27 Nov 00:13:56 > POST request to /api/authenticate 
+27 Nov 00:13:56 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:13:56 > Authenticate: Client credentials are valid
+27 Nov 00:13:56 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:13:56 > App finished
+
+27 Nov 00:13:59 > App started:
+27 Nov 00:13:59 > POST request to /api/authenticate 
+27 Nov 00:13:59 > Authenticate: Got username:john pass:badPASSWORDxxx
+27 Nov 00:13:59 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+27 Nov 00:14:03 > App started:
+27 Nov 00:14:03 > POST request to /api/authenticate 
+27 Nov 00:14:03 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:14:03 > Authenticate: Client credentials are valid
+27 Nov 00:14:03 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:14:03 > App finished
+
+27 Nov 00:16:00 > App started:
+27 Nov 00:16:00 > POST request to /api/authenticate 
+27 Nov 00:16:00 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:16:00 > Authenticate: Client credentials are valid
+27 Nov 00:16:00 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:16:00 > App finished
+
+27 Nov 00:16:03 > App started:
+27 Nov 00:16:03 > POST request to /api/authenticate 
+27 Nov 00:16:03 > Authenticate: Got username:john pass:badPASSWORDxxxx
+27 Nov 00:16:03 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+
+27 Nov 00:16:07 > App started:
+27 Nov 00:16:07 > POST request to /api/authenticate 
+27 Nov 00:16:07 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:16:07 > Authenticate: Client credentials are valid
+27 Nov 00:16:07 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:16:07 > App finished
+
+27 Nov 00:16:09 > App started:
+27 Nov 00:16:09 > POST request to /api/authenticate 
+27 Nov 00:16:09 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:16:09 > Authenticate: Client credentials are valid
+27 Nov 00:16:09 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:16:09 > App finished
+
+27 Nov 00:19:48 > App started:
+27 Nov 00:19:48 > POST request to /api/authenticate 
+27 Nov 00:19:48 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:19:49 > Authenticate: Client credentials are valid
+27 Nov 00:19:49 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:19:49 > App finished
+
+27 Nov 00:19:49 > App started:
+27 Nov 00:19:49 > POST request to /api/authenticate 
+27 Nov 00:19:49 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:19:49 > Authenticate: Client credentials are valid
+27 Nov 00:19:49 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:19:49 > App finished
+
+27 Nov 00:19:50 > App started:
+27 Nov 00:19:50 > POST request to /api/authenticate 
+27 Nov 00:19:50 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:19:50 > Authenticate: Client credentials are valid
+27 Nov 00:19:51 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:19:51 > App finished
+
+27 Nov 00:19:51 > App started:
+27 Nov 00:19:51 > POST request to /api/authenticate 
+27 Nov 00:19:51 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:19:51 > Authenticate: Client credentials are valid
+27 Nov 00:19:51 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:19:51 > App finished
+
+27 Nov 00:19:53 > App started:
+27 Nov 00:19:53 > POST request to /api/authenticate 
+27 Nov 00:19:53 > Authenticate: Got username:john pass:badPASSWORDxxx
+27 Nov 00:19:53 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+
+27 Nov 00:19:54 > App started:
+27 Nov 00:19:54 > POST request to /api/authenticate 
+27 Nov 00:19:54 > Authenticate: Got username:john pass:badPASSWORDxxx
+27 Nov 00:19:54 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+
+27 Nov 00:19:59 > App started:
+27 Nov 00:19:59 > 404 error at /api/authenticatess
+27 Nov 00:19:59 > App finished
+
+27 Nov 00:20:09 > App started:
+27 Nov 00:20:09 > POST request to /api/authenticate 
+27 Nov 00:20:09 > Authenticate: Got username:john pass:badPASSWORDxxx
+27 Nov 00:20:09 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+
+27 Nov 00:20:15 > App started:
+27 Nov 00:20:15 > POST request to /api/authenticate 
+27 Nov 00:20:15 > Authenticate: Got username:john pass:badPASSWORD
+27 Nov 00:20:15 > Authenticate: Client credentials are valid
+27 Nov 00:20:15 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
+27 Nov 00:20:15 > App finished

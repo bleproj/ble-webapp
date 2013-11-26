@@ -21,6 +21,7 @@ require 'app/bootstrap.php';
 // Routes
 require 'app/routes/home.php';
 require 'app/routes/api/authenticate.php';
+require 'app/routes/log.php';
 
 // Run
 require 'app/unbootstrap.php';

@@ -3,6 +3,7 @@
 // The home page
 $app->get('/', function() use ($app)  {
 
+    $data['section'] = 'home';
     $data['users'] = User::all();
     $data['clients'] = Client::all();
     $data['tokens'] = AccessToken::all();

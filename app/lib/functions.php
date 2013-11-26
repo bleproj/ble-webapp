@@ -139,10 +139,10 @@ function isValidTestType($testTypeName)
     }
 }
 
-function isValidLoginCredentials($username, $password)
+function isValidClientCredentials($username, $password)
 {
     $password = md5($password);
-    $user = User::find(array('conditions' => array("username = '$username' AND password = '$password'")));
+    $user = Client::find(array('conditions' => array("username = '$username' AND password = '$password'")));
     return isset($user->username);
 }
 
