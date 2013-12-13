@@ -146,6 +146,30 @@ function isValidClientCredentials($username, $password)
     return isset($user->username);
 }
 
+function isValidaAccessTokenForUser($token, $username){
+    $client = Client::find(array('conditions' => array("username = '$username'")));
+
+    if(isset($client->username)){
+        $accesstoken = Accesstoken::find(array('conditions' => array("value = '$token' AND clientid='$client->id'")));
+        if(isset($accesstoken->value)){
+            return $client->id;
+        } else {
+            return 0;
+        }
+    } else {
+        return 0;
+    }
+}
+
+function getUsername($clientID){
+    $client = Client::find(array('conditions' => array("id = '$clientID'")));
+    if(isset($client->username)){
+        return $client->name;
+    } else {
+        return false;
+    }
+}
+
 
 // Replaces the last occurance of a string in a string
 function str_lreplace($search, $replace, $subject)
@@ -167,13 +191,11 @@ function generate_access_token(){
         mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
         $charid = strtoupper(md5(uniqid(rand(), true)));
         $hyphen = chr(45);// "-"
-        $uuid = chr(123)// "{"
-            .substr($charid, 0, 8).$hyphen
+        $uuid = substr($charid, 0, 8).$hyphen
             .substr($charid, 8, 4).$hyphen
             .substr($charid,12, 4).$hyphen
             .substr($charid,16, 4).$hyphen
-            .substr($charid,20,12)
-            .chr(125);// "}"
+            .substr($charid,20,12);
         return $uuid;
     }
 }

@@ -18,12 +18,14 @@ $app->error(function ( Exception $e ) use ($app) {
         $app->render('error.twig', $payload);
     }
     $app->log->info($e->getCode().' error at ' . $app->request()->getPathInfo() . ' Message: ' . $payload['error']['message'] . "\n");
+    $app->pusher->trigger('utils', 'log-updated', '');
 });
 
 // Error page setup
 $app->notFound(function () use ($app) {
     $app->log->info('404 error at ' . $app->request()->getPathInfo());
     $app->render('error.twig', array('error' => array('code' => 404, 'message' => 'Page not found.')));
+    $app->pusher->trigger('utils', 'log-updated', '');
 });
 
 //Run that mofo!

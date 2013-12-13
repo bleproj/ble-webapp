@@ -6,8 +6,11 @@ body.login {
 
 body.log {
     position: relative;
+    overflow: hidden;
     background: #000;
 }
+
+body.docs { height: 100%; }
 
 .form-signin {
     max-width: 330px;
@@ -48,17 +51,17 @@ body.log {
     background-color: #293236;
     position: absolute;
     top: 51px;
-    right: 0;
+    right: -15px;
     left: 0;
     bottom: 0;
     border-top: 1px solid #3a464c;
     border-bottom: 1px solid #3a464c;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 20px 0;
 
     font-size: 13px;
     font-family: 'Inconsolata', sans-serif;
-    color: #a4a9a4;
+    color: #dfe8e9;
     overflow-y: scroll;
 }
 
@@ -70,21 +73,73 @@ body.log {
     top: 52px;
     left: 0;
     right: 0;
-    }
-
-.log-content .line {
-    display: block;
 }
 
+.log-content .line {
+    padding: 0 20px;
+    display: block;
+}
 
 .line.separator { padding: 6px 0;}
 .line.separator:last-child { display: none; }
 
-.log-content .timestamp {
-    color: #749ebf;
-}
-
+/* Syntax highlights */
+.log-content .timestamp { color: #749ebf; }
 .log-content .http-method { color: #ffd42a;}
 .log-content .error { color: #ff311f;}
 .log-content .caret-symbol { color: #a4d57f;}
-.log-content .url-path { color: #fff;}
+.log-content .url-path { color: #d5a756;}
+
+.log-controls {
+    position: absolute;
+    top: 72px;
+    right: 20px;
+    z-index: 14;
+}
+
+.flash-message-container {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    z-index: 200;
+}
+
+.flash-message-container .alert {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Single course */
+.courses .description { max-width: 640px;}
+
+
+/* Docs */
+
+.docs-sidebar .nav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
+.block {
+    height: 1000px;
+}
+
+#updating-icon {
+    visibility: hidden;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    background: green;
+    display: inline-block;
+    margin-left: 10px;
+    -webkit-animation: pulsation .7s infinite;
+}
+
+@-webkit-keyframes pulsation {
+    0%   { opacity: 1; box-shadow: none; }
+    50% { opacity: 0; box-shadow: 0 0 3px rgba(0,255,0,.5); }
+    100% { opacity: 1; box-shadow: none; }
+}

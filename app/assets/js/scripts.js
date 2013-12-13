@@ -1,33 +1,42 @@
 var chart;
+var pusher = new Pusher('c1f79d5768d5b59431e5');
 $(document).ready(function () {
 
-    setTimeout(function(){$('#banner').slideDown(500, 'easeOutBack')}, 300);
+    $('body').scrollspy({ target: '#docs-nav' });
 
-    $('.sidebar').affix();
+    updateAttending();
+    function updateAttending() {
+        if ($('#current-attendants').length) {
+            var courseCode = $("#current-attendants").data('coursecode');
+            $("#current-attendants").html("");
+            $.get("/api/checkins/" + courseCode, function (data) {
+                $(data).each(function (i, t) {
+                    $("#current-attendants").append("<li class='list-group-item'>" + data[i]["username"] + "</li>");
+                })
+            });
 
-    $('ul.tests .btn').click(function(){
-        $(this).button('loading');
-    });
-
-    //Thumbnails fix
-    $('.row-fluid ul.thumbnails li.span6:nth-child(2n + 3)').css('margin-left','0px');
-    $('.row-fluid ul.thumbnails li.span4:nth-child(3n + 4)').css('margin-left','0px');
-    $('.row-fluid ul.thumbnails li.span3:nth-child(4n + 5)').css('margin-left','0px');
-
-
-    $('.span9 .delete').click(function(e){
-        if(!confirm('Do you really want to delete this?')){
-            e.preventDefault();
-            return false;
         }
-        return true;
-    });
+    }
 
-    $('.compare-btn').click(function(e){
-        e.preventDefault();
-        $(this).remove();
-        $('.compare-list').slideDown(400);
-    });
+    var channel = pusher.subscribe('checkins');
 
+    channel.bind('checkins-updated',
+        function(data) {
+            flashUpdate();
+            updateAttending();
+        }
+    );
+
+    function flashUpdate(){
+        playSound("notification");
+        $('#updating-icon').css("visibility", "visible");
+        setTimeout(function(){
+            $('#updating-icon').css("visibility","hidden");
+        },1400);
+    }
+
+    function playSound(filename){
+        $('body').append('<div id="sound"></div>');
+        document.getElementById("sound").innerHTML='<audio autoplay="autoplay"><source src="/app/assets/sounds/' + filename + '.mp3" type="audio/mpeg" /><source src="' + filename + '.ogg" type="audio/ogg" /><embed hidden="true" autostart="true" loop="false" src="' + filename +'.mp3" /></audio>';
+    }
 });
-

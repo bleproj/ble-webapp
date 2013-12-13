@@ -8,5 +8,7 @@
  */
 class Client extends \ActiveRecord\Model
 {
-
+    static $has_one = array(
+        array('accesstoken')
+    );
 }

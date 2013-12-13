@@ -20,8 +20,11 @@ require 'app/bootstrap.php';
 
 // Routes
 require 'app/routes/home.php';
-require 'app/routes/api/authenticate.php';
 require 'app/routes/log.php';
+require 'app/routes/docs.php';
+require 'app/routes/events.php';
+require 'app/routes//api/checkins.php';
+require 'app/routes/api/authenticate.php';
 
 // Run
 require 'app/unbootstrap.php';

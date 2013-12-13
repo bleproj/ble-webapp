@@ -1,42 +1,13 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://js.pusher.com/2.1/pusher.min.js"></script>
 <script src="/app/assets/js/bootstrap.min.js"></script>
 <script src="/app/assets/js/scripts.js"></script>
+{% if section == 'log' %}<script src="/app/assets/js/log.js"></script>{% endif %}
 <script>
-
-function scrollToBottom(){
-    $('.log-content').scrollTop($('.log-content')[0].scrollHeight);
-}
-
-$( window ).resize(function() {
-    scrollToBottom();
-});
-
-var rawLogData;
-
-$(function() {
-    $(".main-menu .{{ section }}").addClass("active");
-
-    if($('.log-content').length){
-        $.get( "/app/log/log.txt", function( rawData ) {
-            rawLogData = rawData;
-            var logLines = rawData.split("\n");
-            $.each(logLines, function(index, line){
-                if(line == "") $('.log-content').append("<span class='line separator'></span>");
-
-                var timestamp = line.substr(0,18).replace(/((>))/g,"<span class='caret-symbol'>$1</span>");;
-                var lineContent = line.substr(18).replace(/((POST|GET))/g,"<span class='http-method'>$1</span>");
-                var lineContent = lineContent.replace(/(([0-9]{3} error))/g,"<span class='error'>$1</span>");
-                var lineContent = lineContent.replace(/(\/([a-z/])+ )/,"<span class='url-path'>$1</span>");
-
-                if(timestamp != "" && lineContent != ""){
-                    var lineHTML = "<span class='line' data-line-number='"+ index +"'><span class='timestamp'>"+ timestamp +"</span><span class='line-content'>"+ lineContent +"</span></span>";
-                }
-                $('.log-content').append(lineHTML);
-            });
-            scrollToBottom();
-        });
-    }
-});
+    $(function(){
+        //Setting current page in main menu
+        $(".main-menu .{{ section }}").addClass("active");
+    });
 </script>
 </body>
 </html>

@@ -10,21 +10,26 @@ $app->post('/api/authenticate', function() use ($app)  {
     $password = $loginCredentials['password'];
 
     $app->log->debug("Authenticate: Got username:". $loginCredentials['username'] ." pass:" . $loginCredentials['password']);
+    $app->log->debug("Got request body: " . $app->request()->getBody());
 
     if(isValidClientCredentials($username, $password)){
         $app->log->debug('Authenticate: Client credentials are valid');
 
-        $user = Client::find('all', array('conditions' => array('username = ?', $username)));
-        $user = $user[0];
+        $client = Client::find('all', array('conditions' => array('username = ?', $username)));
+        $client = $client[0];
 
         // Get access token
-        $accessToken = AccessToken::find('all', array('conditions' => array('user_id = ?', $user->id)));
-        $accessToken = $accessToken[0];
+        $accessToken = Accesstoken::find('all', array('conditions' => array('clientid = ?', $client->id)));
 
-        if($accessToken->value){
+        if(isset($accessToken[0]) && $accessToken[0]->value){
+            $accessToken = $accessToken[0];
             $app->log->debug("Authenticate: Client '". $username ."' has existing token " . $accessToken->value);
         } else {
             $app->log->debug("Authenticate: Client has no exsiting token, generating a new one.");
+            $accessToken = new Accesstoken();
+            $accessToken->value = generate_access_token();
+            $accessToken->clientid = $client->id;
+            $accessToken->save();
         }
 
         // Construct response

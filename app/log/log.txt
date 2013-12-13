@@ -1,104 +1,2452 @@
-27 Nov 00:13:55 > App started:
-27 Nov 00:13:55 > POST request to /api/authenticate 
-27 Nov 00:13:55 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:13:55 > Authenticate: Client credentials are valid
-27 Nov 00:13:55 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:13:55 > App finished
+29 Nov 20:52:06 > App started:
+29 Nov 20:52:06 > POST request to /api/authenticate 
+29 Nov 20:52:06 > Authenticate: Got username:john pass:badPASSWORD
+29 Nov 20:52:06 > Got request body: {"username":"john","password":"badPASSWORD"}
+29 Nov 20:52:06 > Authenticate: Client credentials are valid
+29 Nov 20:52:06 > Authenticate: Client has no exsiting token, generating a new one.
+29 Nov 20:52:07 > 0 error at /api/authenticate Message: Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 454 in file Model.php on line 454
 
-27 Nov 00:13:56 > App started:
-27 Nov 00:13:56 > POST request to /api/authenticate 
-27 Nov 00:13:56 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:13:56 > Authenticate: Client credentials are valid
-27 Nov 00:13:56 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:13:56 > App finished
+29 Nov 20:55:11 > App started:
+29 Nov 20:55:11 > POST request to /api/authenticate 
+29 Nov 20:55:11 > Authenticate: Got username:john pass:badPASSWORD
+29 Nov 20:55:11 > Got request body: {"username":"john","password":"badPASSWORD"}
+29 Nov 20:55:11 > Authenticate: Client credentials are valid
+29 Nov 20:55:11 > Authenticate: Client has no exsiting token, generating a new one.
+29 Nov 20:55:12 > 0 error at /api/authenticate Message: Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 454 in file Model.php on line 454
 
-27 Nov 00:13:59 > App started:
-27 Nov 00:13:59 > POST request to /api/authenticate 
-27 Nov 00:13:59 > Authenticate: Got username:john pass:badPASSWORDxxx
-27 Nov 00:13:59 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
-27 Nov 00:14:03 > App started:
-27 Nov 00:14:03 > POST request to /api/authenticate 
-27 Nov 00:14:03 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:14:03 > Authenticate: Client credentials are valid
-27 Nov 00:14:03 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:14:03 > App finished
+30 Nov 14:10:55 > App started:
+30 Nov 14:10:55 > POST request to /api/authenticate 
+30 Nov 14:10:55 > Authenticate: Got username:john pass:badPASSWORD
+30 Nov 14:10:55 > Got request body: {"password":"badPASSWORD","username":"john"}
+30 Nov 14:10:55 > Authenticate: Client credentials are valid
+30 Nov 14:10:55 > Authenticate: Client has no exsiting token, generating a new one.
+30 Nov 14:10:55 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+12 Dec 13:55:40 > App started:
+12 Dec 13:55:40 > POST request to /api/authenticate 
+12 Dec 13:55:40 > Authenticate: Got username: pass:
+12 Dec 13:55:40 > Got request body: {"password":"","username":""}
+12 Dec 13:55:40 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 13:55:57 > App started:
+12 Dec 13:55:57 > POST request to /api/authenticate 
+12 Dec 13:55:57 > Authenticate: Got username:john pass:badPASSWORD
+12 Dec 13:55:57 > Got request body: {"password":"badPASSWORD","username":"john"}
+12 Dec 13:55:57 > Authenticate: Client credentials are valid
+12 Dec 13:55:57 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ble.accesstokens' doesn't exist' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/adapters/MysqlAdapter.php(25): ActiveRecord\Connection->query('SHOW COLUMNS FR...')
+#2 /var/www/bleserver/php-activerecord/lib/Connection.php(264): ActiveRecord\MysqlAdapter->query_column_info('`accesstokens`')
+#3 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Connection->columns('`accesstokens`')
+#4 /var/www/bleserver/php-activerecord/lib/Cache.php(67): ActiveRecord\Table->ActiveRecord\{closure}()
+#5 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Cache::get('get_meta_data-`...', Object(Closure))
+#6 /var/www/bleserver/php-activerecord/lib/Table.php(82): ActiveRecord\Table->get_meta_data()
+#7 /var/www/bleserver/php-activerecord/lib/Table.php(61): ActiveRecord\Table->__construct('Accesstoken')
+#8 /var/www/bleserver/php-activerecord/lib/Model.php(744): ActiveRecord\Table::load('Accesstoken')
+#9 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Model::table()
+#10 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#11 [internal function]: {closure}()
+#12 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#13 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#14 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#15 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#16 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#17 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#18 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#19 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#20 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/adapters/MysqlAdapter.php(25): ActiveRecord\Connection->query('SHOW COLUMNS FR...')
+#1 /var/www/bleserver/php-activerecord/lib/Connection.php(264): ActiveRecord\MysqlAdapter->query_column_info('`accesstokens`')
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Connection->columns('`accesstokens`')
+#3 /var/www/bleserver/php-activerecord/lib/Cache.php(67): ActiveRecord\Table->ActiveRecord\{closure}()
+#4 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Cache::get('get_meta_data-`...', Object(Closure))
+#5 /var/www/bleserver/php-activerecord/lib/Table.php(82): ActiveRecord\Table->get_meta_data()
+#6 /var/www/bleserver/php-activerecord/lib/Table.php(61): ActiveRecord\Table->__construct('Accesstoken')
+#7 /var/www/bleserver/php-activerecord/lib/Model.php(744): ActiveRecord\Table::load('Accesstoken')
+#8 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Model::table()
+#9 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#10 [internal function]: {closure}()
+#11 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#12 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#13 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#14 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#15 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#16 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#17 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#18 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#19 {main}
+12 Dec 13:58:57 > App started:
+12 Dec 13:58:57 > POST request to /api/authenticate 
+12 Dec 13:58:57 > Authenticate: Got username: pass:
+12 Dec 13:58:57 > Got request body: {"password":"","username":""}
+12 Dec 13:58:57 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 13:59:09 > App started:
+12 Dec 13:59:09 > POST request to /api/authenticate 
+12 Dec 13:59:09 > Authenticate: Got username: pass:
+12 Dec 13:59:09 > Got request body: {"password":"","username":""}
+12 Dec 13:59:09 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:00:00 > App started:
+12 Dec 14:00:00 > POST request to /api/authenticate 
+12 Dec 14:00:00 > Authenticate: Got username: pass:
+12 Dec 14:00:00 > Got request body: {"password":"","username":""}
+12 Dec 14:00:00 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:04:00 > App started:
+12 Dec 14:04:00 > POST request to /api/authenticate 
+12 Dec 14:04:00 > Authenticate: Got username: pass:
+12 Dec 14:04:00 > Got request body: {"password":"","username":""}
+12 Dec 14:04:00 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:04:58 > App started:
+12 Dec 14:04:58 > POST request to /api/authenticate 
+12 Dec 14:04:58 > Authenticate: Got username: pass:
+12 Dec 14:04:58 > Got request body: {"password":"","username":""}
+12 Dec 14:04:58 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:06:49 > App started:
+12 Dec 14:06:49 > POST request to /api/authenticate 
+12 Dec 14:06:49 > Authenticate: Got username: pass:
+12 Dec 14:06:49 > Got request body: {"password":"","username":""}
+12 Dec 14:06:49 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:09:02 > App started:
+12 Dec 14:09:02 > POST request to /api/authenticate 
+12 Dec 14:09:02 > Authenticate: Got username: pass:
+12 Dec 14:09:02 > Got request body: {"password":"","username":""}
+12 Dec 14:09:02 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:15:28 > App started:
+12 Dec 14:15:28 > POST request to /api/authenticate 
+12 Dec 14:15:28 > Authenticate: Got username: pass:
+12 Dec 14:15:28 > Got request body: {"password":"","username":""}
+12 Dec 14:15:28 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:16:59 > App started:
+12 Dec 14:16:59 > POST request to /api/authenticate 
+12 Dec 14:16:59 > Authenticate: Got username: pass:
+12 Dec 14:16:59 > Got request body: {"password":"","username":""}
+12 Dec 14:16:59 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:18:53 > App started:
+12 Dec 14:18:53 > POST request to /api/authenticate 
+12 Dec 14:18:53 > Authenticate: Got username: pass:
+12 Dec 14:18:53 > Got request body: {"password":"","username":""}
+12 Dec 14:18:53 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:28:25 > App started:
+12 Dec 14:28:25 > POST request to /api/authenticate 
+12 Dec 14:28:25 > Authenticate: Got username: pass:
+12 Dec 14:28:25 > Got request body: {"password":"","username":""}
+12 Dec 14:28:25 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:28:55 > App started:
+12 Dec 14:28:55 > POST request to /api/authenticate 
+12 Dec 14:28:55 > Authenticate: Got username: pass:
+12 Dec 14:28:55 > Got request body: {"password":"","username":""}
+12 Dec 14:28:55 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:31:03 > App started:
+12 Dec 14:31:03 > POST request to /api/authenticate 
+12 Dec 14:31:03 > Authenticate: Got username: pass:
+12 Dec 14:31:03 > Got request body: {"password":"","username":""}
+12 Dec 14:31:03 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:31:46 > App started:
+12 Dec 14:31:46 > POST request to /api/authenticate 
+12 Dec 14:31:46 > Authenticate: Got username: pass:
+12 Dec 14:31:46 > Got request body: {"password":"","username":""}
+12 Dec 14:31:46 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:34:11 > App started:
+12 Dec 14:34:11 > POST request to /api/authenticate 
+12 Dec 14:34:11 > Authenticate: Got username: pass:
+12 Dec 14:34:11 > Got request body: {"password":"","username":""}
+12 Dec 14:34:11 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:34:43 > App started:
+12 Dec 14:34:43 > POST request to /api/authenticate 
+12 Dec 14:34:43 > Authenticate: Got username: pass:
+12 Dec 14:34:43 > Got request body: {"password":"","username":""}
+12 Dec 14:34:43 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:36:15 > App started:
+12 Dec 14:36:15 > POST request to /api/authenticate 
+12 Dec 14:36:15 > Authenticate: Got username: pass:
+12 Dec 14:36:15 > Got request body: {"password":"","username":""}
+12 Dec 14:36:15 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:38:46 > App started:
+12 Dec 14:38:46 > POST request to /api/authenticate 
+12 Dec 14:38:46 > Authenticate: Got username: pass:
+12 Dec 14:38:46 > Got request body: {"password":"","username":""}
+12 Dec 14:38:46 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:46:30 > App started:
+12 Dec 14:46:30 > POST request to /api/authenticate 
+12 Dec 14:46:30 > Authenticate: Got username: pass:
+12 Dec 14:46:30 > Got request body: {"password":"","username":""}
+12 Dec 14:46:30 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:47:43 > App started:
+12 Dec 14:47:43 > POST request to /api/authenticate 
+12 Dec 14:47:43 > Authenticate: Got username: pass:
+12 Dec 14:47:43 > Got request body: {"password":"","username":""}
+12 Dec 14:47:43 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:50:18 > App started:
+12 Dec 14:50:18 > POST request to /api/authenticate 
+12 Dec 14:50:18 > Authenticate: Got username: pass:
+12 Dec 14:50:18 > Got request body: {"password":"","username":""}
+12 Dec 14:50:18 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:51:14 > App started:
+12 Dec 14:51:14 > POST request to /api/authenticate 
+12 Dec 14:51:14 > Authenticate: Got username: pass:
+12 Dec 14:51:14 > Got request body: {"password":"","username":""}
+12 Dec 14:51:14 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 14:52:48 > App started:
+12 Dec 14:52:48 > POST request to /api/authenticate 
+12 Dec 14:52:48 > Authenticate: Got username: pass:
+12 Dec 14:52:48 > Got request body: {"password":"","username":""}
+12 Dec 14:52:48 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 15:36:21 > App started:
+12 Dec 15:36:21 > POST request to /api/authenticate 
+12 Dec 15:36:21 > Authenticate: Got username: pass:
+12 Dec 15:36:21 > Got request body: {"password":"","username":""}
+12 Dec 15:36:21 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+12 Dec 15:43:26 > App started:
+12 Dec 15:43:26 > POST request to /api/authenticate 
+12 Dec 15:43:26 > Authenticate: Got username: pass:
+12 Dec 15:43:26 > Got request body: {"password":"","username":""}
+12 Dec 15:43:26 > exception 'JSONException' with message 'The credentials received did not match any client' in /var/www/bleserver/app/routes/api/authenticate.php:42
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#9 {main}
+13 Dec 09:52:12 > App started:
+13 Dec 09:52:12 > POST request to /api/authenticate 
+13 Dec 09:52:12 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:12 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:12 > Authenticate: Client credentials are valid
+13 Dec 09:52:12 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:52:19 > App started:
+13 Dec 09:52:19 > POST request to /api/authenticate 
+13 Dec 09:52:19 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:19 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:19 > Authenticate: Client credentials are valid
+13 Dec 09:52:19 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:52:21 > App started:
+13 Dec 09:52:22 > POST request to /api/authenticate 
+13 Dec 09:52:22 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:22 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:22 > Authenticate: Client credentials are valid
+13 Dec 09:52:22 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:52:23 > App started:
+13 Dec 09:52:23 > POST request to /api/authenticate 
+13 Dec 09:52:23 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:23 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:23 > Authenticate: Client credentials are valid
+13 Dec 09:52:23 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:52:25 > App started:
+13 Dec 09:52:25 > POST request to /api/authenticate 
+13 Dec 09:52:25 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:25 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:25 > Authenticate: Client credentials are valid
+13 Dec 09:52:25 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:52:27 > App started:
+13 Dec 09:52:27 > POST request to /api/authenticate 
+13 Dec 09:52:27 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:27 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:27 > Authenticate: Client credentials are valid
+13 Dec 09:52:27 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:52:28 > App started:
+13 Dec 09:52:28 > POST request to /api/authenticate 
+13 Dec 09:52:28 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:28 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:28 > Authenticate: Client credentials are valid
+13 Dec 09:52:28 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:52:42 > App started:
+13 Dec 09:52:42 > POST request to /api/authenticate 
+13 Dec 09:52:42 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:52:42 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:52:42 > Authenticate: Client credentials are valid
+13 Dec 09:52:42 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'client_id' in 'where clause'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#4 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#14 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(218): ActiveRecord\Connection->query('SELECT * FROM `...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(209): ActiveRecord\Table->find_by_sql('SELECT * FROM `...', Array, false, NULL)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(1568): ActiveRecord\Table->find(Array)
+#3 /var/www/bleserver/app/routes/api/authenticate.php(22): ActiveRecord\Model::find('all', Array)
+#4 [internal function]: {closure}()
+#5 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#6 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#7 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#8 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#11 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#12 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#13 {main}
+13 Dec 09:58:32 > App started:
+13 Dec 09:58:32 > POST request to /api/authenticate 
+13 Dec 09:58:32 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 09:58:32 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 09:58:32 > Authenticate: Client credentials are valid
+13 Dec 09:58:32 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 09:58:32 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:01:16 > App started:
+13 Dec 10:01:16 > POST request to /api/authenticate 
+13 Dec 10:01:16 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:01:16 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:01:16 > Authenticate: Client credentials are valid
+13 Dec 10:01:16 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:01:16 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:01:37 > App started:
+13 Dec 10:01:37 > POST request to /api/authenticate 
+13 Dec 10:01:37 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:01:37 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:01:37 > Authenticate: Client credentials are valid
+13 Dec 10:01:37 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:01:37 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:06:04 > App started:
+13 Dec 10:06:04 > POST request to /api/authenticate 
+13 Dec 10:06:04 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:06:04 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:06:04 > Authenticate: Client credentials are valid
+13 Dec 10:06:04 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:06:04 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:08:42 > App started:
+13 Dec 10:08:42 > POST request to /api/authenticate 
+13 Dec 10:08:42 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:08:42 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:08:42 > Authenticate: Client credentials are valid
+13 Dec 10:08:42 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:08:42 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:08:53 > App started:
+13 Dec 10:08:53 > POST request to /api/authenticate 
+13 Dec 10:08:53 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:08:53 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:08:54 > Authenticate: Client credentials are valid
+13 Dec 10:08:54 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:08:54 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:09:34 > App started:
+13 Dec 10:09:34 > POST request to /api/authenticate 
+13 Dec 10:09:34 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:09:34 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:09:34 > Authenticate: Client credentials are valid
+13 Dec 10:09:34 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:09:34 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:11:42 > App started:
+13 Dec 10:11:42 > POST request to /api/authenticate 
+13 Dec 10:11:42 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:11:42 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:11:42 > Authenticate: Client credentials are valid
+13 Dec 10:11:42 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:11:42 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:14:02 > App started:
+13 Dec 10:14:02 > POST request to /api/authenticate 
+13 Dec 10:14:02 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:14:02 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:14:02 > Authenticate: Client credentials are valid
+13 Dec 10:14:02 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:14:03 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:15:52 > App started:
+13 Dec 10:15:52 > POST request to /api/authenticate 
+13 Dec 10:15:52 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:15:52 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:15:52 > Authenticate: Client credentials are valid
+13 Dec 10:15:52 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:15:52 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Accesstoken->client in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:420
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/authenticate.php(31): ActiveRecord\Model->__set('client', Object(Client))
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(29): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:16:27 > App started:
+13 Dec 10:16:27 > POST request to /api/authenticate 
+13 Dec 10:16:27 > Authenticate: Got username:john pass:badPASSWORD
+13 Dec 10:16:27 > Got request body: {"password":"badPASSWORD","username":"john"}
+13 Dec 10:16:27 > Authenticate: Client credentials are valid
+13 Dec 10:16:27 > Authenticate: Client has no exsiting token, generating a new one.
+13 Dec 10:16:27 > App finished
 
-27 Nov 00:16:00 > App started:
-27 Nov 00:16:00 > POST request to /api/authenticate 
-27 Nov 00:16:00 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:16:00 > Authenticate: Client credentials are valid
-27 Nov 00:16:00 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:16:00 > App finished
+13 Dec 10:27:27 > App started:
+13 Dec 10:27:27 > 404 error at /api/chekins
+13 Dec 10:27:28 > App finished
 
-27 Nov 00:16:03 > App started:
-27 Nov 00:16:03 > POST request to /api/authenticate 
-27 Nov 00:16:03 > Authenticate: Got username:john pass:badPASSWORDxxxx
-27 Nov 00:16:03 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+13 Dec 10:28:37 > App started:
+13 Dec 10:28:37 > 404 error at /api/chekins
+13 Dec 10:28:38 > App finished
 
-27 Nov 00:16:07 > App started:
-27 Nov 00:16:07 > POST request to /api/authenticate 
-27 Nov 00:16:07 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:16:07 > Authenticate: Client credentials are valid
-27 Nov 00:16:07 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:16:07 > App finished
+13 Dec 10:29:19 > App started:
+13 Dec 10:29:19 > POST request to /api/checkins 
+13 Dec 10:29:19 > exception 'ErrorException' with message 'Undefined index: password' in /var/www/bleserver/app/routes/api/checkins.php:15
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(15): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 15, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:29:56 > App started:
+13 Dec 10:29:56 > POST request to /api/checkins 
+13 Dec 10:29:56 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:29:56 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:29:56 > Authenticate: Client credentials are valid
+13 Dec 10:30:10 > App started:
+13 Dec 10:30:10 > POST request to /api/checkins 
+13 Dec 10:30:10 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:30:10 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:30:10 > Authenticate: Client credentials are valid
+13 Dec 10:30:10 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ble.checkins' doesn't exist' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/adapters/MysqlAdapter.php(25): ActiveRecord\Connection->query('SHOW COLUMNS FR...')
+#2 /var/www/bleserver/php-activerecord/lib/Connection.php(264): ActiveRecord\MysqlAdapter->query_column_info('`checkins`')
+#3 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Connection->columns('`checkins`')
+#4 /var/www/bleserver/php-activerecord/lib/Cache.php(67): ActiveRecord\Table->ActiveRecord\{closure}()
+#5 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Cache::get('get_meta_data-`...', Object(Closure))
+#6 /var/www/bleserver/php-activerecord/lib/Table.php(82): ActiveRecord\Table->get_meta_data()
+#7 /var/www/bleserver/php-activerecord/lib/Table.php(61): ActiveRecord\Table->__construct('Checkin')
+#8 /var/www/bleserver/php-activerecord/lib/Model.php(744): ActiveRecord\Table::load('Checkin')
+#9 /var/www/bleserver/php-activerecord/lib/Model.php(257): ActiveRecord\Model::table()
+#10 /var/www/bleserver/php-activerecord/lib/Model.php(758): ActiveRecord\Model->__construct(Array, true)
+#11 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#12 [internal function]: {closure}()
+#13 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#14 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#15 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#16 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#17 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#18 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#19 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#20 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#21 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/adapters/MysqlAdapter.php(25): ActiveRecord\Connection->query('SHOW COLUMNS FR...')
+#1 /var/www/bleserver/php-activerecord/lib/Connection.php(264): ActiveRecord\MysqlAdapter->query_column_info('`checkins`')
+#2 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Connection->columns('`checkins`')
+#3 /var/www/bleserver/php-activerecord/lib/Cache.php(67): ActiveRecord\Table->ActiveRecord\{closure}()
+#4 /var/www/bleserver/php-activerecord/lib/Table.php(370): ActiveRecord\Cache::get('get_meta_data-`...', Object(Closure))
+#5 /var/www/bleserver/php-activerecord/lib/Table.php(82): ActiveRecord\Table->get_meta_data()
+#6 /var/www/bleserver/php-activerecord/lib/Table.php(61): ActiveRecord\Table->__construct('Checkin')
+#7 /var/www/bleserver/php-activerecord/lib/Model.php(744): ActiveRecord\Table::load('Checkin')
+#8 /var/www/bleserver/php-activerecord/lib/Model.php(257): ActiveRecord\Model::table()
+#9 /var/www/bleserver/php-activerecord/lib/Model.php(758): ActiveRecord\Model->__construct(Array, true)
+#10 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#11 [internal function]: {closure}()
+#12 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#13 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#14 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#15 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#16 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#17 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#18 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#19 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#20 {main}
+13 Dec 10:30:58 > App started:
+13 Dec 10:30:58 > POST request to /api/checkins 
+13 Dec 10:30:58 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:30:58 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:30:59 > exception 'JSONException' with message 'The access token is not valid for this user.' in /var/www/bleserver/app/routes/api/checkins.php:39
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#9 {main}
+13 Dec 10:34:08 > App started:
+13 Dec 10:34:08 > POST request to /api/checkins 
+13 Dec 10:34:08 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:34:08 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:34:08 > exception 'JSONException' with message 'The access token is not valid for this user.' in /var/www/bleserver/app/routes/api/checkins.php:39
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#9 {main}
+13 Dec 10:34:37 > App started:
+13 Dec 10:34:37 > POST request to /api/checkins 
+13 Dec 10:34:37 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:34:37 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:34:37 > exception 'JSONException' with message 'The access token is not valid for this user.' in /var/www/bleserver/app/routes/api/checkins.php:39
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#9 {main}
+13 Dec 10:34:54 > App started:
+13 Dec 10:34:54 > POST request to /api/checkins 
+13 Dec 10:34:54 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:34:54 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:34:54 > exception 'JSONException' with message 'The access token is not valid for this user.' in /var/www/bleserver/app/routes/api/checkins.php:39
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#9 {main}
+13 Dec 10:35:37 > App started:
+13 Dec 10:35:37 > POST request to /api/checkins 
+13 Dec 10:35:37 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:35:37 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:35:37 > Authenticate: Client credentials are valid
+13 Dec 10:35:37 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Checkin->userid in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:1204
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Model.php(261): ActiveRecord\Model->set_attributes_via_mass_assignment(Array, true)
+#1 /var/www/bleserver/php-activerecord/lib/Model.php(758): ActiveRecord\Model->__construct(Array, true)
+#2 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#3 [internal function]: {closure}()
+#4 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#6 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#10 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#11 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#12 {main}
+13 Dec 10:37:04 > App started:
+13 Dec 10:37:04 > POST request to /api/checkins 
+13 Dec 10:37:04 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:37:04 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:37:04 > Authenticate: Client credentials are valid
+13 Dec 10:37:04 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Checkin->userid in /var/www/bleserver/php-activerecord/lib/Model.php on line 420' in /var/www/bleserver/php-activerecord/lib/Model.php:1204
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Model.php(261): ActiveRecord\Model->set_attributes_via_mass_assignment(Array, true)
+#1 /var/www/bleserver/php-activerecord/lib/Model.php(758): ActiveRecord\Model->__construct(Array, true)
+#2 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#3 [internal function]: {closure}()
+#4 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#5 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#6 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#10 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#11 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#12 {main}
+13 Dec 10:37:11 > App started:
+13 Dec 10:37:11 > 404 error at /api/checkin
+13 Dec 10:37:12 > App finished
 
-27 Nov 00:16:09 > App started:
-27 Nov 00:16:09 > POST request to /api/authenticate 
-27 Nov 00:16:09 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:16:09 > Authenticate: Client credentials are valid
-27 Nov 00:16:09 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:16:09 > App finished
+13 Dec 10:37:39 > App started:
+13 Dec 10:37:39 > POST request to /api/checkins 
+13 Dec 10:37:39 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:37:39 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:37:39 > Authenticate: Client credentials are valid
+13 Dec 10:37:40 > App finished
 
-27 Nov 00:19:48 > App started:
-27 Nov 00:19:48 > POST request to /api/authenticate 
-27 Nov 00:19:48 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:19:49 > Authenticate: Client credentials are valid
-27 Nov 00:19:49 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:19:49 > App finished
+13 Dec 10:37:45 > App started:
+13 Dec 10:37:45 > 404 error at /api/checkin
+13 Dec 10:37:46 > App finished
 
-27 Nov 00:19:49 > App started:
-27 Nov 00:19:49 > POST request to /api/authenticate 
-27 Nov 00:19:49 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:19:49 > Authenticate: Client credentials are valid
-27 Nov 00:19:49 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:19:49 > App finished
+13 Dec 10:37:56 > App started:
+13 Dec 10:37:56 > 404 error at /api/checkin
+13 Dec 10:37:57 > App finished
 
-27 Nov 00:19:50 > App started:
-27 Nov 00:19:50 > POST request to /api/authenticate 
-27 Nov 00:19:50 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:19:50 > Authenticate: Client credentials are valid
-27 Nov 00:19:51 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:19:51 > App finished
+13 Dec 10:38:59 > App started:
+13 Dec 10:38:59 > 404 error at /api/checkin
+13 Dec 10:39:00 > App finished
 
-27 Nov 00:19:51 > App started:
-27 Nov 00:19:51 > POST request to /api/authenticate 
-27 Nov 00:19:51 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:19:51 > Authenticate: Client credentials are valid
-27 Nov 00:19:51 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:19:51 > App finished
+13 Dec 10:41:19 > App started:
+13 Dec 10:41:19 > POST request to /api/checkins 
+13 Dec 10:41:19 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 10:41:19 > Got request body: {"access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 10:41:19 > Authenticate: Client credentials are valid
+13 Dec 10:41:20 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#4 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#5 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#6 [internal function]: {closure}()
+#7 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#9 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#13 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#14 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#15 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#4 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#14 {main}
+13 Dec 10:42:21 > App started:
+13 Dec 10:42:21 > POST request to /api/checkins 
+13 Dec 10:42:21 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 10:42:21 > Got request body: {"access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 10:42:21 > Authenticate: Client credentials are valid
+13 Dec 10:42:21 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#4 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#5 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#6 [internal function]: {closure}()
+#7 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#9 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#13 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#14 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#15 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#4 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#14 {main}
+13 Dec 10:43:23 > App started:
+13 Dec 10:43:23 > POST request to /api/checkins 
+13 Dec 10:43:23 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 10:43:23 > Got request body: {"access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 10:43:23 > Authenticate: Client credentials are valid
+13 Dec 10:43:23 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#4 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#5 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#6 [internal function]: {closure}()
+#7 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#9 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#13 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#14 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#15 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#4 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#14 {main}
+13 Dec 10:44:07 > App started:
+13 Dec 10:44:07 > POST request to /api/checkins 
+13 Dec 10:44:07 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:44:07 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:44:07 > Authenticate: Client credentials are valid
+13 Dec 10:44:07 > exception 'ActiveRecord\DatabaseException' with message 'exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'' in /var/www/bleserver/php-activerecord/lib/Connection.php:322
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Connection.php(322): PDOStatement->execute(Array)
+#1 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#4 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#5 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#6 [internal function]: {closure}()
+#7 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#8 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#9 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#13 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#14 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#15 {main}' in /var/www/bleserver/php-activerecord/lib/Connection.php:325
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Table.php(327): ActiveRecord\Connection->query('INSERT INTO `ch...', Array)
+#1 /var/www/bleserver/php-activerecord/lib/Model.php(823): ActiveRecord\Table->insert(Array)
+#2 /var/www/bleserver/php-activerecord/lib/Model.php(778): ActiveRecord\Model->insert(true)
+#3 /var/www/bleserver/php-activerecord/lib/Model.php(759): ActiveRecord\Model->save(true)
+#4 /var/www/bleserver/app/routes/api/checkins.php(30): ActiveRecord\Model::create(Array)
+#5 [internal function]: {closure}()
+#6 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#7 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#8 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#9 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#10 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#11 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#12 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#13 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#14 {main}
+13 Dec 10:44:48 > App started:
+13 Dec 10:44:48 > POST request to /api/checkins 
+13 Dec 10:44:48 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 10:44:48 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39"}
+13 Dec 10:44:48 > Authenticate: Client credentials are valid
+13 Dec 10:44:48 > App finished
 
-27 Nov 00:19:53 > App started:
-27 Nov 00:19:53 > POST request to /api/authenticate 
-27 Nov 00:19:53 > Authenticate: Got username:john pass:badPASSWORDxxx
-27 Nov 00:19:53 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+13 Dec 10:44:55 > App started:
+13 Dec 10:44:55 > POST request to /api/checkins 
+13 Dec 10:44:55 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 10:44:55 > Got request body: {"access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 10:44:55 > Authenticate: Client credentials are valid
+13 Dec 10:44:55 > App finished
 
-27 Nov 00:19:54 > App started:
-27 Nov 00:19:54 > POST request to /api/authenticate 
-27 Nov 00:19:54 > Authenticate: Got username:john pass:badPASSWORDxxx
-27 Nov 00:19:54 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+13 Dec 10:45:19 > App started:
+13 Dec 10:45:19 > POST request to /api/checkins 
+13 Dec 10:45:19 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 10:45:19 > Got request body: {"access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 10:45:19 > Authenticate: Client credentials are valid
+13 Dec 10:45:19 > App finished
 
-27 Nov 00:19:59 > App started:
-27 Nov 00:19:59 > 404 error at /api/authenticatess
-27 Nov 00:19:59 > App finished
+13 Dec 10:49:47 > App started:
+13 Dec 10:49:47 > POST request to /api/checkins 
+13 Dec 10:49:47 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:50:07 > App started:
+13 Dec 10:50:07 > POST request to /api/checkins 
+13 Dec 10:50:07 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:50:48 > App started:
+13 Dec 10:50:48 > POST request to /api/checkins 
+13 Dec 10:50:48 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:51:09 > App started:
+13 Dec 10:51:09 > POST request to /api/checkins 
+13 Dec 10:51:09 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:53:43 > App started:
+13 Dec 10:53:43 > POST request to /api/checkins 
+13 Dec 10:53:43 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:54:50 > App started:
+13 Dec 10:54:50 > POST request to /api/checkins 
+13 Dec 10:54:50 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:54:56 > App started:
+13 Dec 10:54:56 > POST request to /api/checkins 
+13 Dec 10:54:56 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:55:03 > App started:
+13 Dec 10:55:03 > POST request to /api/checkins 
+13 Dec 10:55:03 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:57:26 > App started:
+13 Dec 10:57:26 > POST request to /api/checkins 
+13 Dec 10:57:26 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:57:33 > App started:
+13 Dec 10:57:33 > POST request to /api/checkins 
+13 Dec 10:57:33 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:57:39 > App started:
+13 Dec 10:57:39 > POST request to /api/checkins 
+13 Dec 10:57:39 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:57:52 > App started:
+13 Dec 10:57:52 > POST request to /api/checkins 
+13 Dec 10:57:52 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:57:58 > App started:
+13 Dec 10:57:58 > POST request to /api/checkins 
+13 Dec 10:57:58 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 10:58:04 > App started:
+13 Dec 10:58:04 > POST request to /api/checkins 
+13 Dec 10:58:04 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:00:06 > App started:
+13 Dec 11:00:06 > POST request to /api/checkins 
+13 Dec 11:00:06 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 11:00:06 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkin"}
+13 Dec 11:00:06 > Authenticate: Client credentials are valid
+13 Dec 11:00:07 > App finished
 
-27 Nov 00:20:09 > App started:
-27 Nov 00:20:09 > POST request to /api/authenticate 
-27 Nov 00:20:09 > Authenticate: Got username:john pass:badPASSWORDxxx
-27 Nov 00:20:09 > 403 error at /api/authenticate Message: The credentials received did not match any client in file authenticate.php on line 37
+13 Dec 11:00:29 > App started:
+13 Dec 11:00:29 > POST request to /api/checkins 
+13 Dec 11:00:29 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 11:00:29 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkout"}
+13 Dec 11:00:30 > Authenticate: Client credentials are valid
+13 Dec 11:00:30 > App finished
 
-27 Nov 00:20:15 > App started:
-27 Nov 00:20:15 > POST request to /api/authenticate 
-27 Nov 00:20:15 > Authenticate: Got username:john pass:badPASSWORD
-27 Nov 00:20:15 > Authenticate: Client credentials are valid
-27 Nov 00:20:15 > Authenticate: Client 'john' has existing token 7C947B5B-A7A9-57CD-6076-463165FB0EB8
-27 Nov 00:20:15 > App finished
+13 Dec 11:04:16 > App started:
+13 Dec 11:04:17 > POST request to /api/checkins 
+13 Dec 11:04:17 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:04:23 > App started:
+13 Dec 11:04:24 > POST request to /api/checkins 
+13 Dec 11:04:24 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:04:30 > App started:
+13 Dec 11:04:30 > POST request to /api/checkins 
+13 Dec 11:04:30 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:04:36 > App started:
+13 Dec 11:04:36 > POST request to /api/checkins 
+13 Dec 11:04:36 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:04:42 > App started:
+13 Dec 11:04:42 > POST request to /api/checkins 
+13 Dec 11:04:42 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:04:48 > App started:
+13 Dec 11:04:48 > POST request to /api/checkins 
+13 Dec 11:04:48 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:04:54 > App started:
+13 Dec 11:04:54 > POST request to /api/checkins 
+13 Dec 11:04:54 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:05:00 > App started:
+13 Dec 11:05:00 > POST request to /api/checkins 
+13 Dec 11:05:00 > exception 'ErrorException' with message 'Undefined index: option' in /var/www/bleserver/app/routes/api/checkins.php:12
+Stack trace:
+#0 /var/www/bleserver/app/routes/api/checkins.php(12): Slim\Slim::handleErrors(8, 'Undefined index...', '/var/www/bleser...', 12, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#3 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#4 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#8 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#9 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#10 {main}
+13 Dec 11:09:11 > App started:
+13 Dec 11:09:11 > POST request to /api/checkins 
+13 Dec 11:09:11 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 11:09:11 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 11:09:11 > Authenticate: Client credentials are valid
+13 Dec 11:09:11 > App finished
+
+13 Dec 11:09:39 > App started:
+13 Dec 11:09:39 > POST request to /api/checkins 
+13 Dec 11:09:39 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 11:09:39 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 11:09:39 > Authenticate: Client credentials are valid
+13 Dec 11:09:39 > App finished
+
+13 Dec 11:18:41 > App started:
+13 Dec 11:18:41 > POST request to /api/checkins 
+13 Dec 11:18:41 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 11:18:41 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 11:18:41 > Authenticate: Client credentials are valid
+13 Dec 11:18:41 > App finished
+
+13 Dec 11:18:59 > App started:
+13 Dec 11:18:59 > POST request to /api/checkins 
+13 Dec 11:18:59 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 11:18:59 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 11:18:59 > Authenticate: Client credentials are valid
+13 Dec 11:18:59 > App finished
+
+13 Dec 11:21:16 > App started:
+13 Dec 11:21:16 > GET request to /api/checkins/M7012E 
+13 Dec 11:21:17 > exception 'ActiveRecord\UndefinedPropertyException' with message 'Undefined property: Checkin->userid in /var/www/bleserver/php-activerecord/lib/Model.php on line 521' in /var/www/bleserver/php-activerecord/lib/Model.php:521
+Stack trace:
+#0 /var/www/bleserver/php-activerecord/lib/Model.php(333): ActiveRecord\Model->read_attribute('userid')
+#1 /var/www/bleserver/app/routes/api/checkins.php(9): ActiveRecord\Model->__get('userid')
+#2 [internal function]: {closure}('M7012E')
+#3 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#4 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#5 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#9 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#10 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#11 {main}
+13 Dec 11:21:28 > App started:
+13 Dec 11:21:28 > GET request to /api/checkins/M7012E 
+13 Dec 11:21:28 > App finished
+
+13 Dec 11:25:48 > App started:
+13 Dec 11:25:48 > GET request to /api/checkins/M7012E 
+13 Dec 11:25:48 > App finished
+
+13 Dec 11:29:41 > App started:
+13 Dec 11:29:41 > 404 error at /api/checkins/
+13 Dec 11:29:42 > App finished
+
+13 Dec 11:31:12 > App started:
+13 Dec 11:31:13 > GET request to /api/checkins/M7012E 
+13 Dec 11:31:13 > App finished
+
+13 Dec 11:31:31 > App started:
+13 Dec 11:31:31 > GET request to /api/checkins/M7012E 
+13 Dec 11:31:31 > App finished
+
+13 Dec 11:32:50 > App started:
+13 Dec 11:32:50 > GET request to /api/checkins/M7012E 
+13 Dec 11:32:50 > App finished
+
+13 Dec 11:33:01 > App started:
+13 Dec 11:33:01 > GET request to /api/checkins/M7012E 
+13 Dec 11:33:01 > App finished
+
+13 Dec 11:33:18 > App started:
+13 Dec 11:33:18 > GET request to /api/checkins/M7012E 
+13 Dec 11:33:18 > App finished
+
+13 Dec 11:33:41 > App started:
+13 Dec 11:33:41 > GET request to /api/checkins/M7012E 
+13 Dec 11:33:41 > App finished
+
+13 Dec 11:33:55 > App started:
+13 Dec 11:33:55 > GET request to /api/checkins/M7012E 
+13 Dec 11:33:55 > App finished
+
+13 Dec 11:34:11 > App started:
+13 Dec 11:34:11 > GET request to /api/checkins/M7012E 
+13 Dec 11:34:12 > App finished
+
+13 Dec 11:34:48 > App started:
+13 Dec 11:34:49 > GET request to /api/checkins/M7012E 
+13 Dec 11:34:49 > App finished
+
+13 Dec 11:35:29 > App started:
+13 Dec 11:35:29 > GET request to /api/checkins/M7012E 
+13 Dec 11:35:29 > App finished
+
+13 Dec 11:35:48 > App started:
+13 Dec 11:35:48 > POST request to /api/checkins 
+13 Dec 11:35:48 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 11:35:48 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 11:35:48 > Authenticate: Client credentials are valid
+13 Dec 11:35:48 > App finished
+
+13 Dec 11:35:58 > App started:
+13 Dec 11:35:58 > GET request to /api/checkins/M7012E 
+13 Dec 11:35:58 > App finished
+
+13 Dec 11:36:41 > App started:
+13 Dec 11:36:41 > GET request to /api/checkins/M7012E 
+13 Dec 11:36:41 > App finished
+
+13 Dec 12:47:16 > App started:
+13 Dec 12:47:16 > POST request to /api/checkins 
+13 Dec 12:47:16 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 12:47:16 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 12:47:16 > Authenticate: Client credentials are valid
+13 Dec 12:47:16 > App finished
+
+13 Dec 12:51:30 > App started:
+13 Dec 12:51:30 > POST request to /api/checkins 
+13 Dec 12:51:30 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 12:51:30 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 12:51:30 > Authenticate: Client credentials are valid
+13 Dec 12:51:30 > App finished
+
+13 Dec 12:53:11 > App started:
+13 Dec 12:53:11 > POST request to /api/checkins 
+13 Dec 12:53:11 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 12:53:11 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 12:53:11 > Authenticate: Client credentials are valid
+13 Dec 12:53:11 > App finished
+
+13 Dec 13:02:59 > App started:
+13 Dec 13:02:59 > GET request to /api/checkins/M7012E 
+13 Dec 13:02:59 > App finished
+
+13 Dec 13:03:33 > App started:
+13 Dec 13:03:33 > POST request to /api/checkins 
+13 Dec 13:03:33 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:03:33 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkout"}
+13 Dec 13:03:33 > Authenticate: Client credentials are valid
+13 Dec 13:03:33 > App finished
+
+13 Dec 13:03:34 > App started:
+13 Dec 13:03:34 > GET request to /api/checkins/M7012E 
+13 Dec 13:03:34 > App finished
+
+13 Dec 13:03:48 > App started:
+13 Dec 13:03:48 > GET request to /api/checkins/M7012E 
+13 Dec 13:03:48 > App finished
+
+13 Dec 13:04:48 > App started:
+13 Dec 13:04:48 > GET request to /api/checkins/M7012E 
+13 Dec 13:04:48 > App finished
+
+13 Dec 13:06:04 > App started:
+13 Dec 13:06:04 > GET request to /api/checkins/M7012E 
+13 Dec 13:06:04 > App finished
+
+13 Dec 13:08:06 > App started:
+13 Dec 13:08:06 > GET request to /api/checkins/M7012E 
+13 Dec 13:08:06 > App finished
+
+13 Dec 13:08:22 > App started:
+13 Dec 13:08:22 > GET request to /api/checkins/M7012E 
+13 Dec 13:08:22 > App finished
+
+13 Dec 13:08:50 > App started:
+13 Dec 13:08:50 > POST request to /api/checkins 
+13 Dec 13:08:50 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:08:50 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkin"}
+13 Dec 13:08:50 > Authenticate: Client credentials are valid
+13 Dec 13:08:51 > App finished
+
+13 Dec 13:08:51 > App started:
+13 Dec 13:08:51 > GET request to /api/checkins/M7012E 
+13 Dec 13:08:51 > App finished
+
+13 Dec 13:11:54 > App started:
+13 Dec 13:11:54 > GET request to /api/checkins/M7012E 
+13 Dec 13:11:54 > App finished
+
+13 Dec 13:12:05 > App started:
+13 Dec 13:12:05 > GET request to /api/checkins/M7012E 
+13 Dec 13:12:05 > App finished
+
+13 Dec 13:12:29 > App started:
+13 Dec 13:12:29 > GET request to /api/checkins/M7012E 
+13 Dec 13:12:29 > App finished
+
+13 Dec 13:12:39 > App started:
+13 Dec 13:12:39 > GET request to /api/checkins/M7012E 
+13 Dec 13:12:39 > App finished
+
+13 Dec 13:13:20 > App started:
+13 Dec 13:13:20 > GET request to /api/checkins/M7012E 
+13 Dec 13:13:20 > App finished
+
+13 Dec 13:13:27 > App started:
+13 Dec 13:13:27 > GET request to /api/checkins/M7012E 
+13 Dec 13:13:27 > App finished
+
+13 Dec 13:13:37 > App started:
+13 Dec 13:13:37 > GET request to /api/checkins/M7012E 
+13 Dec 13:13:37 > App finished
+
+13 Dec 13:15:59 > App started:
+13 Dec 13:15:59 > GET request to /api/checkins/M7012E 
+13 Dec 13:15:59 > App finished
+
+13 Dec 13:16:32 > App started:
+13 Dec 13:16:32 > GET request to /api/checkins/M7012E 
+13 Dec 13:16:32 > App finished
+
+13 Dec 13:17:26 > App started:
+13 Dec 13:17:26 > GET request to /api/checkins/M7012E 
+13 Dec 13:17:26 > App finished
+
+13 Dec 13:17:58 > App started:
+13 Dec 13:17:58 > GET request to /api/checkins/M7012E 
+13 Dec 13:17:58 > App finished
+
+13 Dec 13:22:59 > App started:
+13 Dec 13:22:59 > GET request to /api/checkins/M7012E 
+13 Dec 13:22:59 > App finished
+
+13 Dec 13:28:52 > App started:
+13 Dec 13:28:52 > POST request to /api/checkins 
+13 Dec 13:28:52 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:28:52 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkout"}
+13 Dec 13:28:52 > Authenticate: Client credentials are valid
+13 Dec 13:28:53 > App finished
+
+13 Dec 13:28:53 > App started:
+13 Dec 13:28:53 > GET request to /api/checkins/M7012E 
+13 Dec 13:28:54 > App finished
+
+13 Dec 13:36:24 > App started:
+13 Dec 13:36:24 > GET request to /api/checkins/M7012E 
+13 Dec 13:36:24 > App finished
+
+13 Dec 13:36:45 > App started:
+13 Dec 13:36:46 > GET request to /api/checkins/M7012E 
+13 Dec 13:36:46 > App finished
+
+13 Dec 13:36:54 > App started:
+13 Dec 13:36:54 > GET request to /api/checkins/M7012E 
+13 Dec 13:36:54 > App finished
+
+13 Dec 13:37:03 > App started:
+13 Dec 13:37:03 > POST request to /api/checkins 
+13 Dec 13:37:03 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:37:03 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkin"}
+13 Dec 13:37:03 > Authenticate: Client credentials are valid
+13 Dec 13:37:04 > App finished
+
+13 Dec 13:37:04 > App started:
+13 Dec 13:37:04 > GET request to /api/checkins/M7012E 
+13 Dec 13:37:04 > App finished
+
+13 Dec 13:37:13 > App started:
+13 Dec 13:37:13 > POST request to /api/checkins 
+13 Dec 13:37:13 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:37:13 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkout"}
+13 Dec 13:37:13 > Authenticate: Client credentials are valid
+13 Dec 13:37:13 > App finished
+
+13 Dec 13:37:14 > App started:
+13 Dec 13:37:14 > GET request to /api/checkins/M7012E 
+13 Dec 13:37:14 > App finished
+
+13 Dec 13:37:50 > App started:
+13 Dec 13:37:50 > POST request to /api/checkins 
+13 Dec 13:37:50 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:37:50 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:37:50 > Authenticate: Client credentials are valid
+13 Dec 13:37:51 > App finished
+
+13 Dec 13:37:51 > App started:
+13 Dec 13:37:51 > GET request to /api/checkins/M7012E 
+13 Dec 13:37:52 > App finished
+
+13 Dec 13:38:08 > App started:
+13 Dec 13:38:08 > POST request to /api/checkins 
+13 Dec 13:38:08 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:38:08 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:38:08 > Authenticate: Client credentials are valid
+13 Dec 13:38:08 > App finished
+
+13 Dec 13:38:09 > App started:
+13 Dec 13:38:09 > GET request to /api/checkins/M7012E 
+13 Dec 13:38:09 > App finished
+
+13 Dec 13:39:52 > App started:
+13 Dec 13:39:52 > POST request to /api/checkins 
+13 Dec 13:39:52 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:39:52 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:39:52 > Authenticate: Client credentials are valid
+13 Dec 13:39:52 > App finished
+
+13 Dec 13:39:53 > App started:
+13 Dec 13:39:53 > GET request to /api/checkins/M7012E 
+13 Dec 13:39:53 > App finished
+
+13 Dec 13:40:10 > App started:
+13 Dec 13:40:10 > POST request to /api/checkins 
+13 Dec 13:40:10 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:40:10 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:40:10 > Authenticate: Client credentials are valid
+13 Dec 13:40:11 > App finished
+
+13 Dec 13:40:11 > App started:
+13 Dec 13:40:11 > GET request to /api/checkins/M7012E 
+13 Dec 13:40:11 > App finished
+
+13 Dec 13:41:28 > App started:
+13 Dec 13:41:28 > POST request to /api/checkins 
+13 Dec 13:41:28 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:41:28 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:41:28 > Authenticate: Client credentials are valid
+13 Dec 13:41:29 > App finished
+
+13 Dec 13:41:29 > App started:
+13 Dec 13:41:29 > GET request to /api/checkins/M7012E 
+13 Dec 13:41:29 > App finished
+
+13 Dec 13:41:48 > App started:
+13 Dec 13:41:48 > POST request to /api/checkins 
+13 Dec 13:41:48 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:41:48 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:41:48 > Authenticate: Client credentials are valid
+13 Dec 13:41:49 > App finished
+
+13 Dec 13:41:49 > App started:
+13 Dec 13:41:49 > GET request to /api/checkins/M7012E 
+13 Dec 13:41:50 > App finished
+
+13 Dec 13:42:34 > App started:
+13 Dec 13:42:34 > POST request to /api/checkins 
+13 Dec 13:42:34 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:42:34 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:42:34 > Authenticate: Client credentials are valid
+13 Dec 13:42:34 > App finished
+
+13 Dec 13:42:35 > App started:
+13 Dec 13:42:35 > GET request to /api/checkins/M7012E 
+13 Dec 13:42:35 > App finished
+
+13 Dec 13:42:51 > App started:
+13 Dec 13:42:51 > POST request to /api/checkins 
+13 Dec 13:42:51 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:42:51 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:42:51 > Authenticate: Client credentials are valid
+13 Dec 13:42:51 > App finished
+
+13 Dec 13:42:52 > App started:
+13 Dec 13:42:52 > GET request to /api/checkins/M7012E 
+13 Dec 13:42:52 > App finished
+
+13 Dec 13:44:13 > App started:
+13 Dec 13:44:13 > POST request to /api/checkins 
+13 Dec 13:44:13 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:44:13 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:44:13 > Authenticate: Client credentials are valid
+13 Dec 13:44:14 > App finished
+
+13 Dec 13:44:14 > App started:
+13 Dec 13:44:14 > GET request to /api/checkins/M7012E 
+13 Dec 13:44:14 > App finished
+
+13 Dec 13:44:30 > App started:
+13 Dec 13:44:30 > POST request to /api/checkins 
+13 Dec 13:44:30 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:44:30 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:44:30 > Authenticate: Client credentials are valid
+13 Dec 13:44:31 > App finished
+
+13 Dec 13:44:31 > App started:
+13 Dec 13:44:31 > GET request to /api/checkins/M7012E 
+13 Dec 13:44:31 > App finished
+
+13 Dec 13:46:39 > App started:
+13 Dec 13:46:39 > POST request to /api/checkins 
+13 Dec 13:46:39 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:46:39 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:46:39 > Authenticate: Client credentials are valid
+13 Dec 13:46:40 > App finished
+
+13 Dec 13:46:40 > App started:
+13 Dec 13:46:40 > GET request to /api/checkins/M7012E 
+13 Dec 13:46:40 > App finished
+
+13 Dec 13:46:53 > App started:
+13 Dec 13:46:53 > POST request to /api/checkins 
+13 Dec 13:46:53 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:46:53 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:46:53 > Authenticate: Client credentials are valid
+13 Dec 13:46:54 > App finished
+
+13 Dec 13:46:54 > App started:
+13 Dec 13:46:54 > GET request to /api/checkins/M7012E 
+13 Dec 13:46:54 > App finished
+
+13 Dec 13:47:45 > App started:
+13 Dec 13:47:45 > POST request to /api/checkins 
+13 Dec 13:47:45 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:47:45 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:47:46 > Authenticate: Client credentials are valid
+13 Dec 13:47:46 > App finished
+
+13 Dec 13:47:47 > App started:
+13 Dec 13:47:47 > GET request to /api/checkins/M7012E 
+13 Dec 13:47:47 > App finished
+
+13 Dec 13:48:06 > App started:
+13 Dec 13:48:06 > POST request to /api/checkins 
+13 Dec 13:48:06 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:48:06 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:48:06 > Authenticate: Client credentials are valid
+13 Dec 13:48:07 > App finished
+
+13 Dec 13:48:08 > App started:
+13 Dec 13:48:08 > GET request to /api/checkins/M7012E 
+13 Dec 13:48:08 > App finished
+
+13 Dec 13:48:17 > App started:
+13 Dec 13:48:17 > POST request to /api/checkins 
+13 Dec 13:48:17 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:48:17 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:48:17 > Authenticate: Client credentials are valid
+13 Dec 13:48:17 > App finished
+
+13 Dec 13:48:18 > App started:
+13 Dec 13:48:18 > GET request to /api/checkins/M7012E 
+13 Dec 13:48:18 > App finished
+
+13 Dec 13:48:30 > App started:
+13 Dec 13:48:30 > POST request to /api/checkins 
+13 Dec 13:48:30 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:48:30 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:48:30 > Authenticate: Client credentials are valid
+13 Dec 13:48:31 > App finished
+
+13 Dec 13:48:31 > App started:
+13 Dec 13:48:31 > GET request to /api/checkins/M7012E 
+13 Dec 13:48:31 > App finished
+
+13 Dec 13:49:34 > App started:
+13 Dec 13:49:34 > POST request to /api/checkins 
+13 Dec 13:49:34 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:49:34 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:49:34 > Authenticate: Client credentials are valid
+13 Dec 13:49:34 > App finished
+
+13 Dec 13:49:35 > App started:
+13 Dec 13:49:35 > GET request to /api/checkins/M7012E 
+13 Dec 13:49:35 > App finished
+
+13 Dec 13:49:42 > App started:
+13 Dec 13:49:42 > POST request to /api/checkins 
+13 Dec 13:49:42 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:49:42 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:49:42 > Authenticate: Client credentials are valid
+13 Dec 13:49:42 > App finished
+
+13 Dec 13:49:56 > App started:
+13 Dec 13:49:56 > POST request to /api/checkins 
+13 Dec 13:49:56 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 13:49:56 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 13:49:56 > Authenticate: Client credentials are valid
+13 Dec 13:49:56 > App finished
+
+13 Dec 13:49:57 > App started:
+13 Dec 13:49:57 > GET request to /api/checkins/M7012E 
+13 Dec 13:49:57 > App finished
+
+13 Dec 13:55:22 > App started:
+13 Dec 13:55:22 > GET request to /api/checkins/M7012E 
+13 Dec 13:55:22 > App finished
+
+13 Dec 13:56:28 > App started:
+13 Dec 13:56:28 > POST request to /api/checkins 
+13 Dec 13:56:28 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:56:28 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkin"}
+13 Dec 13:56:28 > exception 'JSONException' with message 'The access token is not valid for this user.' in /var/www/bleserver/app/routes/api/checkins.php:75
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/bleserver/Slim/Route.php(436): call_user_func_array(Object(Closure), Array)
+#2 /var/www/bleserver/Slim/Slim.php(1307): Slim\Route->dispatch()
+#3 /var/www/bleserver/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#4 /var/www/bleserver/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#5 /var/www/bleserver/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#6 /var/www/bleserver/Slim/Slim.php(1254): Slim\Middleware\PrettyExceptions->call()
+#7 /var/www/bleserver/app/unbootstrap.php(32): Slim\Slim->run()
+#8 /var/www/bleserver/index.php(30): require('/var/www/bleser...')
+#9 {main}
+13 Dec 13:57:00 > App started:
+13 Dec 13:57:00 > POST request to /api/checkins 
+13 Dec 13:57:00 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:57:00 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkin"}
+13 Dec 13:57:00 > Authenticate: Client credentials are valid
+13 Dec 13:57:01 > App finished
+
+13 Dec 13:57:01 > App started:
+13 Dec 13:57:01 > GET request to /api/checkins/M7012E 
+13 Dec 13:57:01 > App finished
+
+13 Dec 13:59:10 > App started:
+13 Dec 13:59:10 > GET request to /api/checkins/M7012E 
+13 Dec 13:59:11 > App finished
+
+13 Dec 13:59:18 > App started:
+13 Dec 13:59:18 > POST request to /api/checkins 
+13 Dec 13:59:18 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:59:18 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkout"}
+13 Dec 13:59:18 > Authenticate: Client credentials are valid
+13 Dec 13:59:18 > App finished
+
+13 Dec 13:59:19 > App started:
+13 Dec 13:59:19 > GET request to /api/checkins/M7012E 
+13 Dec 13:59:19 > App finished
+
+13 Dec 13:59:39 > App started:
+13 Dec 13:59:39 > POST request to /api/checkins 
+13 Dec 13:59:39 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 13:59:39 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkin"}
+13 Dec 13:59:39 > Authenticate: Client credentials are valid
+13 Dec 13:59:40 > App finished
+
+13 Dec 13:59:40 > App started:
+13 Dec 13:59:40 > GET request to /api/checkins/M7012E 
+13 Dec 13:59:40 > App finished
+
+13 Dec 14:05:45 > App started:
+13 Dec 14:05:45 > GET request to /api/checkins/M7012E 
+13 Dec 14:05:45 > App finished
+
+13 Dec 14:05:58 > App started:
+13 Dec 14:05:58 > GET request to /api/checkins/M7012E 
+13 Dec 14:05:58 > App finished
+
+13 Dec 14:06:34 > App started:
+13 Dec 14:06:34 > POST request to /api/checkins 
+13 Dec 14:06:34 > Chekin: Got username:john Beacon uuid:23542266-18D1-4FE4-B4A1-23F8195B9D39
+13 Dec 14:06:34 > Got request body: {"username": "john","access_token": "4D5A79E5-83B9-64D8-9B15-2856E62403A1", "uuid": "23542266-18D1-4FE4-B4A1-23F8195B9D39", "option": "checkin"}
+13 Dec 14:06:34 > Authenticate: Client credentials are valid
+13 Dec 14:06:34 > App finished
+
+13 Dec 14:06:35 > App started:
+13 Dec 14:06:35 > GET request to /api/checkins/M7012E 
+13 Dec 14:06:35 > App finished
+
+13 Dec 14:06:56 > App started:
+13 Dec 14:06:56 > GET request to /api/checkins/M7012E 
+13 Dec 14:06:56 > App finished
+
+13 Dec 14:07:17 > App started:
+13 Dec 14:07:17 > GET request to /api/checkins/M7012E 
+13 Dec 14:07:17 > App finished
+
+13 Dec 14:11:00 > App started:
+13 Dec 14:11:00 > POST request to /api/checkins 
+13 Dec 14:11:00 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:11:00 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:11:00 > Authenticate: Client credentials are valid
+13 Dec 14:11:01 > App finished
+
+13 Dec 14:11:01 > App started:
+13 Dec 14:11:02 > GET request to /api/checkins/M7012E 
+13 Dec 14:11:02 > App finished
+
+13 Dec 14:11:20 > App started:
+13 Dec 14:11:20 > POST request to /api/checkins 
+13 Dec 14:11:20 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:11:20 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:11:20 > Authenticate: Client credentials are valid
+13 Dec 14:11:20 > App finished
+
+13 Dec 14:11:21 > App started:
+13 Dec 14:11:21 > GET request to /api/checkins/M7012E 
+13 Dec 14:11:21 > App finished
+
+13 Dec 14:12:16 > App started:
+13 Dec 14:12:16 > POST request to /api/checkins 
+13 Dec 14:12:16 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:12:16 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:12:16 > Authenticate: Client credentials are valid
+13 Dec 14:12:16 > App finished
+
+13 Dec 14:12:17 > App started:
+13 Dec 14:12:17 > GET request to /api/checkins/M7012E 
+13 Dec 14:12:17 > App finished
+
+13 Dec 14:15:05 > App started:
+13 Dec 14:15:05 > POST request to /api/checkins 
+13 Dec 14:15:05 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:15:05 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:15:06 > Authenticate: Client credentials are valid
+13 Dec 14:15:06 > App finished
+
+13 Dec 14:15:28 > App started:
+13 Dec 14:15:29 > POST request to /api/checkins 
+13 Dec 14:15:29 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:15:29 > Got request body: {"option":"checkout","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:15:29 > Authenticate: Client credentials are valid
+13 Dec 14:15:29 > App finished
+
+13 Dec 14:15:30 > App started:
+13 Dec 14:15:30 > GET request to /api/checkins/M7012E 
+13 Dec 14:15:30 > App finished
+
+13 Dec 14:15:36 > App started:
+13 Dec 14:15:36 > POST request to /api/checkins 
+13 Dec 14:15:36 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:15:36 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:15:36 > Authenticate: Client credentials are valid
+13 Dec 14:15:37 > App finished
+
+13 Dec 14:15:37 > App started:
+13 Dec 14:15:37 > GET request to /api/checkins/M7012E 
+13 Dec 14:15:37 > App finished
+
+13 Dec 14:16:41 > App started:
+13 Dec 14:16:41 > POST request to /api/checkins 
+13 Dec 14:16:41 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:16:41 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:16:41 > Authenticate: Client credentials are valid
+13 Dec 14:16:41 > App finished
+
+13 Dec 14:16:45 > App started:
+13 Dec 14:16:45 > POST request to /api/checkins 
+13 Dec 14:16:45 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:16:45 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:16:45 > Authenticate: Client credentials are valid
+13 Dec 14:16:45 > App finished
+
+13 Dec 14:16:49 > App started:
+13 Dec 14:16:49 > POST request to /api/checkins 
+13 Dec 14:16:49 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:16:49 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:16:49 > Authenticate: Client credentials are valid
+13 Dec 14:16:49 > App finished
+
+13 Dec 14:16:53 > App started:
+13 Dec 14:16:53 > POST request to /api/checkins 
+13 Dec 14:16:53 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:16:53 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:16:53 > Authenticate: Client credentials are valid
+13 Dec 14:16:53 > App finished
+
+13 Dec 14:16:57 > App started:
+13 Dec 14:16:57 > POST request to /api/checkins 
+13 Dec 14:16:57 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:16:57 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:16:57 > Authenticate: Client credentials are valid
+13 Dec 14:16:57 > App finished
+
+13 Dec 14:17:01 > App started:
+13 Dec 14:17:01 > POST request to /api/checkins 
+13 Dec 14:17:01 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:01 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:02 > Authenticate: Client credentials are valid
+13 Dec 14:17:02 > App finished
+
+13 Dec 14:17:05 > App started:
+13 Dec 14:17:05 > POST request to /api/checkins 
+13 Dec 14:17:05 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:05 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:06 > Authenticate: Client credentials are valid
+13 Dec 14:17:06 > App finished
+
+13 Dec 14:17:10 > App started:
+13 Dec 14:17:10 > POST request to /api/checkins 
+13 Dec 14:17:10 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:10 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:10 > Authenticate: Client credentials are valid
+13 Dec 14:17:10 > App finished
+
+13 Dec 14:17:14 > App started:
+13 Dec 14:17:14 > POST request to /api/checkins 
+13 Dec 14:17:14 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:14 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:14 > Authenticate: Client credentials are valid
+13 Dec 14:17:14 > App finished
+
+13 Dec 14:17:18 > App started:
+13 Dec 14:17:18 > POST request to /api/checkins 
+13 Dec 14:17:18 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:18 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:18 > Authenticate: Client credentials are valid
+13 Dec 14:17:18 > App finished
+
+13 Dec 14:17:22 > App started:
+13 Dec 14:17:22 > POST request to /api/checkins 
+13 Dec 14:17:22 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:22 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:22 > Authenticate: Client credentials are valid
+13 Dec 14:17:22 > App finished
+
+13 Dec 14:17:26 > App started:
+13 Dec 14:17:26 > POST request to /api/checkins 
+13 Dec 14:17:26 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:26 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:26 > Authenticate: Client credentials are valid
+13 Dec 14:17:26 > App finished
+
+13 Dec 14:17:30 > App started:
+13 Dec 14:17:30 > POST request to /api/checkins 
+13 Dec 14:17:30 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:30 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:30 > Authenticate: Client credentials are valid
+13 Dec 14:17:30 > App finished
+
+13 Dec 14:17:34 > App started:
+13 Dec 14:17:34 > POST request to /api/checkins 
+13 Dec 14:17:34 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:34 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:34 > Authenticate: Client credentials are valid
+13 Dec 14:17:34 > App finished
+
+13 Dec 14:17:38 > App started:
+13 Dec 14:17:38 > POST request to /api/checkins 
+13 Dec 14:17:38 > Chekin: Got username:john Beacon uuid:23542266-18d1-4fe4-b4a1-23f8195b9d39
+13 Dec 14:17:38 > Got request body: {"option":"checkin","access_token":"4D5A79E5-83B9-64D8-9B15-2856E62403A1","username":"john","uuid":"23542266-18d1-4fe4-b4a1-23f8195b9d39"}
+13 Dec 14:17:38 > Authenticate: Client credentials are valid
+13 Dec 14:17:38 > App finished
+
+13 Dec 14:19:04 > App started:
+13 Dec 14:19:04 > GET request to /api/checkins/M7012E 
+13 Dec 14:19:04 > App finished
+

@@ -7,7 +7,7 @@ $appOptions = array('mode' => 'development',
     'view' => new \Slim\Views\Twig(),
     'templates.path' => '/var/www/bleserver/app/views',
     'log.writer' => $logWriter
-    );
+);
 $app = new \Slim\Slim($appOptions);
 $app->setname('BLE');
 $response = $app->response();
@@ -22,7 +22,7 @@ $app->configureMode('production', function () use ($app) {
 $app->configureMode('development', function () use ($app) {
     $app->config(array(
         'log.enable' => true,
-        'debug' => false
+        'debug' => true
     ));
 });
 
@@ -43,7 +43,7 @@ $app->hook('slim.before', function () use ($app) {
     $rootDir = $dirArr[0];
 
     if($rootDir != 'api'){
-      $app->log->setEnabled(false);
+        $app->log->setEnabled(false);
     }
     $app->log->info('App started:');
 });

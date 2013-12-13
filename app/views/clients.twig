@@ -1,80 +1,24 @@
 {% include 'parts/header.twig' %}
-<div class="container-fluid">
-    <div class="row-fluid">
-        <!--Body content-->
-        <h1>Clients
-            <div class="btn-group pull-right">
-                <a href="#access_token_modal" role="button" class="btn" data-toggle="modal">Access tokens</a>
-                <a href="#add_client_modal" role="button" class="btn btn-primary" data-toggle="modal">Create new client</a>
-            </div>
-        </h1>
-        <!-- Modal -->
-        <div id="add_client_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <form action="" method="post">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <h3 id="myModalLabel">Create a new client</h3>
-                </div>
-                <div class="modal-body">
-                    <fieldset><label>Client name:</label>
-                        <input type="text" class="input-large" name="client_name" id="client_name">
-                        <label for="client_description">Client description</label>
-                        <textarea name="client_description" id="client_description" cols="10" rows="10"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                    <input type="submit" class="btn btn-primary" value="Create">
-                </div>
-            </form>
-        </div>
-
-        <!-- Modal -->
-        <div id="access_token_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <h3 id="access_token_moda_header">Access tokens</h3>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Token</th>
-                            <th>Name</th>
-                            <th>Valid before</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for token in accesstokens %}
-                            <tr>
-                                <td>{{ token.value }}</td>
-                                <td>{{ token.name }}</td>
-                                <td>{{ token.valid_before.format('Y-m-d') }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Ok</button>
-                </div>
-        </div>
-
-        <div class="row-fluid">
-            <ul class="thumbnails">
-                {% for client in clients %}
-                    <li class="span4">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>{{ client.name }}</h3>
-
-                                <p><strong>ID: </strong>{{ client.id }}<br>
-                                    {{ client.description }}</p>
-                            </div>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+<div class="container">
+    <h1>Clients</h1>
+    <!-- Example row of columns -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th>username</th>
+            <th>Name</th>
+            <th>Active?</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+                <td><a href="/{{ section }}/{{ course.coursecode }}">{{ course.coursecode }}</a></td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.isactive }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% include 'parts/footer.twig' %}
